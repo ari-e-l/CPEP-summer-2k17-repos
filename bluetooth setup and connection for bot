@@ -1,0 +1,23 @@
+// -General-
+// @name: Bluetooth setup & connection for Arduino Uno bot
+// @namespace: ari-e-l
+// @description: sets up bluetooth for arduino and phone connection
+// @author: me
+//-General-
+
+char. data = 0                                             //Variable for storing recieved data
+void setup () 
+{
+    Serial.begin (9600);                                   //sets up for the data transmit
+    pin.Mode (13, OUTPUT);                                 //sets 13 as the LED Pin and the output pin
+    digital.Write (13, HIGH);                              //sets the voltage (5V) for the LED pin.
+}
+
+void loop ()
+{
+    if(Serial.available() > 0)                             //send data only when you've recieved data
+    {
+        data = Serial.read ();                             //read data and store it in data
+        Serial.print(data);
+        
+        
