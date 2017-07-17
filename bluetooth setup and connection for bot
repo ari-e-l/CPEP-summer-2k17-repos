@@ -7,6 +7,7 @@
 
 int motorPin = 3;                                          //turns transitor on and off, goes with the motorPin
 char. data = 0                                             //Variable for storing recieved data
+
 void setup () 
 {
     Serial.begin (9600);                                   //sets up for the data transmit
