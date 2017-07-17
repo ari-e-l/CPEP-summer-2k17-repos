@@ -5,6 +5,7 @@
 // @author: me
 //-General-
 
+int motorPin = 3;                                          //turns transitor on and off, goes with the motor
 char. data = 0                                             //Variable for storing recieved data
 void setup () 
 {
