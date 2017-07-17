@@ -10,11 +10,23 @@ void setup ()
 {
     Serial.begin (9600);                                   //sets up for the data transmit
     pin.Mode (13, OUTPUT);                                 //sets 13 as the LED Pin and the output pin
+    pin.Mode (motorPin, OUTPUT)
+    while (! Serial);
+    Serial.println("Speed 0 to 255");
     digital.Write (13, HIGH);                              //sets the voltage (5V) for the LED pin.
 }
 
 void loop ()
 {
+    if (Serial.available())
+  {
+        int speed = Serial.parseInt();
+        
+    if (speed >= 0 && speed <= 255)
+  {
+        analogWrite(motorPin, speed);
+  
+  
     if(Serial.available() > 0)                             //send data only when you've recieved data
     {
         data = Serial.read ();                             //read data and store it in data
